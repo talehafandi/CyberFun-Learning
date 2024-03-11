@@ -5,6 +5,7 @@ import bcyrpt from 'bcrypt'
 import crypto from 'crypto'
 import jwt from '../utils/jwt.util.js'
 import mailer from '../utils/mailer.util.js'
+import generateAvatar from '../utils/avatar.util.js';
 
 const signup = asyncMiddleware(async (req, res) => {
     const { email, password } = req.body
@@ -14,7 +15,7 @@ const signup = asyncMiddleware(async (req, res) => {
 
     const salt = await bcyrpt.genSalt(12)
     const hashedPass = await bcyrpt.hash(password, salt)
-
+    
     const confirmationCode = crypto.randomInt(100000, 999999)
     const payload = { ...req.body, password: hashedPass, confirmationCode }
     user = await User.create(payload)
@@ -33,8 +34,12 @@ const signupConfirm = asyncMiddleware(async (req, res) => {
     if (!user) throw new ApiError('INCORRECT_OR_EXPIRED_CONFIRMATION_CODE', 400)
     if (user.email != email) throw new ApiError('EMAIL_DOES_NOT_MATCH', 400)
 
+    const fullname = user.firstname + ' ' + user.lastname
+    const avatar = await generateAvatar(fullname)
+    console.log("avatar: ", avatar)
     user.approved = true
     user.confirmationCode = null
+    user.avatar = avatar
 
     await user.save()
     return res.status(201).json({ token: jwt.sign(user) })

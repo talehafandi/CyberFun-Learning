@@ -22,7 +22,7 @@ const config = {
         secret: process.env.CLOUDINARY_SECRET,
     },
     fs: {
-        temp: path.dirname(process.env.FS_UPLOADS || 'temp')
+        temp: './temp'
     },
 }
 // console.log(config)
