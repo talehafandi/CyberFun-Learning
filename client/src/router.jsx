@@ -6,7 +6,7 @@ import AppbarLayout from "./components/Layouts/AppbarLayout";
 
 //Import components
 import AuthDialog from "./pages/Auth";
-import Levels from "./pages/Levels";
+import Challenges from "./pages/Challenges";
 import Leaderboard from "./pages/Leaderboard";
 import Play from "./pages/Play";
 import Achievements from "./pages/Achievements";
@@ -37,7 +37,7 @@ const routes = [
     children: [
       {
         path: "",
-        element: <Levels />,
+        element: <Challenges />,
       },
       {
         path: "leaderboard",

@@ -46,7 +46,7 @@ const AppBar = () => {
       </div>
       <div className="menu-wrapper">
         <Button component={NavLink} to="" className="menu-item">
-          Levels
+          Challenge
         </Button>
         <Button component={NavLink} to="leaderboard" className="menu-item">
           Leaderboard
