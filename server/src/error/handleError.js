@@ -1,8 +1,8 @@
-import { ApiError } from "./ApiError.js"
+import config from "../config.js";
 
 export default (error, _req, res, _next) => {   
     console.log("error: ", error);
-    if(!error.prod){
+    if(!error.prod && config.env == 'prod'){
         error.message = 'Something went wrong'
         error.status = 500
     }
