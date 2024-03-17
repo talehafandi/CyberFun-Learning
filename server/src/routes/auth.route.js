@@ -7,7 +7,7 @@ const router = Router()
 // for unregistered users
 router.post('/signup', controller.signup)
 router.post('/login', controller.login)
-router.post('/signup-confirm', controller.signupConfirm)
+// router.post('/signup-confirm', controller.signupConfirm)
 
 // router.use(access)
 
