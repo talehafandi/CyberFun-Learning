@@ -1,0 +1,208 @@
+.container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  height: calc(100vh - 62px);
+  padding-left: 50px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-content {
+  gap: 20px;
+  padding: 20px 0px;
+  width: 100%;
+  max-width: 1145px;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.page-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+.page-title {
+  color: rgba(0, 216, 208, 1);
+  height: auto;
+  font-size: 30px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.challengeswrapper {
+  gap: 39px;
+  display: flex;
+  align-items: flex-start;
+}
+.challenges {
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.challengetopic {
+  gap: 11px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.challenge-name {
+  color: rgba(33, 189, 183, 1);
+  height: auto;
+  font-size: 25px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.levelsgroup {
+  gap: 9px;
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.level {
+  gap: auto;
+  width: 849px;
+  display: flex;
+  padding: 15px;
+  box-sizing: content-box;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(21, 76, 74, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  justify-content: space-between;
+  background-color: rgba(241, 255, 253, 1);
+}
+.iconandleveldetails {
+  gap: 18px;
+  min-width: 203px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.level-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+}
+.leveldetails {
+  gap: 2px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.text04 {
+  color: rgba(43, 43, 43, 1);
+  height: auto;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text06 {
+  color: rgba(137, 137, 137, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame7 {
+  gap: 10px;
+  width: 66px;
+  height: 23px;
+  display: flex;
+  padding: 17px 18px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  justify-content: center;
+  background-color: rgba(217, 217, 217, 1);
+}
+.text08 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.level-name-wrapper {
+  color: rgba(43, 43, 43, 1);
+  height: auto;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.completion-status-wrapper {
+  color: rgba(137, 137, 137, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.start-btn-wrapper {
+  gap: 10px;
+  width: 66px;
+  height: 23px;
+  display: flex;
+  padding: 17px 18px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  justify-content: center;
+  background-color: rgba(217, 217, 217, 1);
+}
+.start-btn {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

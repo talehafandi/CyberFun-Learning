@@ -1,7 +1,385 @@
+/* .container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  padding-left: 50px;
+} */
+
 .container {
   width: 100%;
   display: flex;
   overflow: auto;
   height: calc(100vh - 62px);
-  padding-left: 50px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+.pagecontent {
+  gap: 20px;
+  width: 1176px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.playmaincontent {
+  gap: 20px;
+  display: flex;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.pagetitlescorewrapper {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.ppagetitletext {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+.text {
+  color: rgba(0, 216, 208, 1);
+  height: auto;
+  font-size: 30px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text02 {
+  color: rgba(21, 76, 74, 1);
+  height: auto;
+  font-size: 30px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text03 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.scoreliveswrapper {
+  gap: 25px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.scorewrapper {
+  gap: 26px;
+  width: 205px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.text05 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 30px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text07 {
+  color: rgba(255, 131, 0, 1);
+  height: auto;
+  font-size: 30px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.lives {
+  gap: 5px;
+  width: 177px;
+  display: flex;
+  padding: 6px 15px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+.favoritefill {
+  width: 24px;
+  height: 24px;
+}
+.favoritefill1 {
+  width: 24px;
+  height: 24px;
+}
+.favoritefill2 {
+  width: 24px;
+  height: 24px;
+}
+.brokenheart {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.subtract {
+  top: 3.8576035499572754px;
+  left: 1.8098419904708862px;
+  width: 20px;
+  height: 18px;
+  position: absolute;
+}
+.brokenheart1 {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.subtract1 {
+  top: 3.8576035499572754px;
+  left: 1.8098419904708862px;
+  width: 20px;
+  height: 18px;
+  position: absolute;
+}
+.playwrapper {
+  gap: 14px;
+  display: flex;
+  padding: 15px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 20px;
+  background-color: rgba(217, 217, 217, 1);
+}
+.sceneimage {
+  width: 397px;
+  height: auto;
+  align-self: stretch;
+  border-radius: 20px;
+}
+.scenewrapper {
+  gap: 48px;
+  display: flex;
+  padding: 30px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 1);
+}
+.scenetext {
+  gap: 20px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.text09 {
+  color: rgba(14, 13, 13, 1);
+  height: auto;
+  font-size: 32px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text11 {
+  color: rgba(63, 63, 63, 1);
+  height: auto;
+  font-size: 24px;
+  align-self: stretch;
+  font-style: Regular;
+  text-align: left;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text13 {
+  color: rgba(100, 100, 100, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Regular;
+  text-align: left;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.answeroptionswrapper {
+  gap: 10px;
+  display: flex;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.text15 {
+  color: rgba(215, 9, 96, 1);
+  height: auto;
+  font-size: 24px;
+  font-style: Bold;
+  text-align: left;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.answeroptions {
+  gap: 10px;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+}
+.option {
+  gap: 2px;
+  display: flex;
+  padding: 15px 10px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(21, 76, 74, 1);
+}
+.text17 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 16px;
+  align-self: stretch;
+  font-style: Bold;
+  text-align: center;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.option1 {
+  gap: 2px;
+  display: flex;
+  padding: 15px 10px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(21, 76, 74, 1);
+}
+.text19 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 16px;
+  align-self: stretch;
+  font-style: Bold;
+  text-align: center;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.option2 {
+  gap: 2px;
+  display: flex;
+  padding: 15px 10px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(21, 76, 74, 1);
+}
+.text21 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 16px;
+  align-self: stretch;
+  font-style: Bold;
+  text-align: center;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.timerwrapper {
+  gap: 10px;
+  height: 700px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.clock {
+  gap: 10px;
+  width: 53px;
+  height: 53px;
+  display: flex;
+  padding: 8px 9px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+.alarmclocklight {
+  width: 40px;
+  height: 40px;
+}
+/* .timerbar {
+  width: 38px;
+  height: 637px;
+  flex-grow: 1;
+  border-radius: 50px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+} */

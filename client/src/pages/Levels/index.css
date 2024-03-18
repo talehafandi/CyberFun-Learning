@@ -1,7 +1,0 @@
-.container {
-  width: 100%;
-  display: flex;
-  overflow: auto;
-  height: calc(100vh - 62px);
-  padding-left: 50px;
-}

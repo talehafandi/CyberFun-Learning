@@ -4,4 +4,313 @@
   overflow: auto;
   height: calc(100vh - 62px);
   padding-left: 50px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pagecontent {
+  /* gap: 20px; */
+  width: 1145px;
+  padding: 20px 0px;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.leaderboardmaincontent {
+  gap: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.ppagetitletext {
+  display: flex;
+  align-items: center;
+}
+.text {
+  color: rgba(0, 216, 208, 1);
+  height: auto;
+  font-size: 30px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.leaderboardwrapper {
+  gap: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.rangetogglesearchwrapper {
+  gap: 20px;
+  width: 863px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.rangetogglegroup {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.rangetogglebutton {
+  display: flex;
+  padding: 5px 15px;
+  align-items: center;
+  border-radius: 50px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(196, 196, 196, 1);
+}
+.text02 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.rangetogglebutton1 {
+  display: flex;
+  padding: 5px 15px;
+  align-items: center;
+  border-radius: 50px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(196, 196, 196, 1);
+}
+.text04 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.search {
+  width: 320px;
+  display: flex;
+  padding: 14px 28px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 50px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(196, 196, 196, 1);
+}
+.text06 {
+  color: rgba(131, 129, 129, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.leaderboardtablewrapper {
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+.leaderboardtable {
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.leaderboardtableheader {
+  gap: 204px;
+  width: 863px;
+  display: flex;
+  padding: 2px 40px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  justify-content: center;
+  background-color: rgba(64, 64, 64, 1);
+}
+.text08 {
+  color: rgba(255, 255, 255, 1);
+  width: 44px;
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text10 {
+  color: rgba(255, 255, 255, 1);
+  width: 22px;
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text12 {
+  color: rgba(255, 255, 255, 1);
+  width: 37px;
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.leaderboardtablerow {
+  gap: 162px;
+  width: 863px;
+  display: flex;
+  padding: 10px 37px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background-color: rgba(217, 217, 217, 1);
+}
+.profilenamewrapper {
+  gap: 30px;
+  display: flex;
+  align-items: center;
+}
+.profilepicture {
+  width: 50px;
+  height: 50px;
+}
+.text14 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text16 {
+  color: rgba(21, 76, 74, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text18 {
+  color: rgba(255, 131, 0, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.leaderboardpeekwrapper {
+  gap: 10px;
+  display: flex;
+  padding: 36px 12px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.leaderboardpeek {
+  display: flex;
+  padding: 27px 20px;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(81, 81, 81, 1);
+}
+.chartpinlight {
+  width: 150px;
+  height: 150px;
+}
+.rank {
+  display: flex;
+  padding: 31px 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.text20 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 30px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text22 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 60px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.viewleaderboardbutton {
+  gap: 10px;
+  width: 193px;
+  display: flex;
+  padding: 15px 25px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  justify-content: center;
+  background-color: rgba(217, 217, 217, 1);
+}
+.text24 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
 }
