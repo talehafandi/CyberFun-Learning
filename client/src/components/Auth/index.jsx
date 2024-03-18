@@ -32,7 +32,7 @@ export const Auth = () => {
   const { authPopupVisibility } = useAppContext();
   const [authView, setAuthView] = useState("signin");
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -42,9 +42,9 @@ export const Auth = () => {
     setEmail(event.target.value);
   };
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
+  // const handleUsernameChange = (event) => {
+  //   setUsername(event.target.value);
+  // };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -63,7 +63,7 @@ export const Auth = () => {
     setPassword("");
     setFirstName("");
     setLastName("");
-    setUsername("");
+    // setUsername("");
   };
 
   const toggleAuthView = () => {
@@ -76,7 +76,7 @@ export const Auth = () => {
     console.log("Signing in...");
     setSigning(true);
     await restApi
-      .signIn(username, password)
+      .signIn(email, password)
       .then((response) => {
         console.log("Sign in response: ", response);
         setSigning(false);
@@ -199,13 +199,13 @@ export const Auth = () => {
             <div className="sign-in-form">
               <TextField
                 className="text-field-instance"
-                id="username"
-                label="Username"
+                id="email"
+                label="Email"
                 variant="standard"
                 size="medium"
-                value={username}
+                value={email}
                 sx={{ marginBottom: "10%" }}
-                onChange={handleUsernameChange}
+                onChange={handleEmailChange}
                 color="secondary"
               />
               <TextField

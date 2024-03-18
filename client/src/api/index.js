@@ -24,12 +24,12 @@ export const makeApiCall = async (endpoint, method, data) => {
 };
 
 const restApi = {
-  signIn: (username, password) =>
-    makeApiCall("auth/login", "POST", { username, password }),
+  signIn: (email, password) =>
+    makeApiCall("auth/login", "POST", { email, password }),
   signUp: (firstName, lastName, email, password) =>
     makeApiCall("auth/signup", "POST", {
-      first_name: firstName,
-      last_name: lastName,
+      firstName: firstName,
+      lastName: lastName,
       email,
       password,
     }),

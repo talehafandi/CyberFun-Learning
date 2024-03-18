@@ -44,12 +44,12 @@ const Fields = {
 
 const User = new Schema({
     // basic info
-    firstname: { type: String, required: true },
-    lastname: { type: String, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     role: { type: String, enum: UserRoles, default: UserRoles.USER },
-    possession: { type: String, enum: Fields, required: true }, //? would be better if we make it enum?
-    gender: { type: String, enum: Genders, default: Genders.NONE },
+    possession: { type: String, enum: Fields }, // add require: true
+    gender: { type: String, enum: Genders },
     avatar: {
         url: String,
         public_id: { type: String, select: false }
