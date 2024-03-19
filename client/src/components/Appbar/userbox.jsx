@@ -11,7 +11,6 @@ import {
 import TouchRipple from "@mui/material/ButtonBase/TouchRipple";
 import { useDispatch } from "react-redux"; // Import useDispatch
 import { updateSignedInUser } from "../../redux/reducers/userSlice";
-import { Button } from "@mui/material";
 
 const Userbox = () => {
   const dispatch = useDispatch();

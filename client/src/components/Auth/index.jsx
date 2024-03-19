@@ -166,7 +166,7 @@ export const Auth = () => {
               }}
               align="left"
             >
-              CyberPlay
+              CyberFun
             </Typography>
           </div>
         </div>
