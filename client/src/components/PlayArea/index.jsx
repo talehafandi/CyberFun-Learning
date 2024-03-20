@@ -10,6 +10,8 @@ import {
 import { useEffect, memo } from "react";
 import Scene from "../Scene";
 import Quiz from "../Quiz";
+import Summary from "../Summary";
+import Flashcards from "../Flashcards";
 
 const PlayArea = memo(() => {
   const currentView = useSelector(getCurrentView);
@@ -28,6 +30,8 @@ const PlayArea = memo(() => {
   return (
     <>
       {currentView == "scenes" && <Scene currentScene={currentScene} />}
+      {currentView == "summary" && <Summary />}
+      {currentView == "flashcards" && <Flashcards />}
       {currentView == "quiz" && <Quiz />}
     </>
   );

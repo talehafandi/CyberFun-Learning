@@ -13,7 +13,7 @@ export const playSlice = createSlice({
     totalTime: 100,
     started: false,
     choicesMade: [],
-    currentView: "scenes", //scene, summary, flashcards, quiz
+    currentView: "scenes", //scenes, summary, flashcards, quiz, final
     summary: "",
     flashCards: [],
     quizQuestions: [],
@@ -27,7 +27,7 @@ export const playSlice = createSlice({
       state.scenes = action.payload.scenes;
       state.summary = action.payload.summary;
       state.flashCards = action.payload.flashCards;
-      state.quizQuestions = action.payload.quizQuestions;
+      state.quizQuestions = action.payload.quiz;
     },
     updateScenes: (state, action) => {
       /*Usage:

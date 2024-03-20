@@ -1,42 +1,39 @@
 import { useEffect } from "react";
 import SceneText from "../SceneText";
 import { useSelector } from "react-redux";
-import { getCurrentView } from "../../redux/reducers/playSlice";
+import {
+  getCurrentView,
+  getQuizQuestions,
+} from "../../redux/reducers/playSlice";
 
 const Quiz = ({ currentScene }) => {
   const currentView = useSelector(getCurrentView);
+  const quizQuestions = useSelector(getQuizQuestions);
 
   useEffect(() => {
     console.log("Quiz mounted...");
-    console.log("Current quiz question ", currentScene);
+    console.log("Current quiz question ", quizQuestions);
   });
 
-  const handleOutcome = (outcomeIndex) => {
-    console.log("Outcome: ", outcomeIndex);
-  };
   return (
     <>
       <div className="playwrapper">
-        <span>Let's test your knowledge...</span>
         <div className="scenewrapper">
+          <span>Let's test your knowledge...</span>
           <div className="scenetext">
-            <SceneText sceneDescription={currentScene?.sceneDescription} />
+            <SceneText sceneDescription={quizQuestions[0]?.question || ""} />
           </div>
           {currentScene?.options?.length > 0 && (
             <div className="answeroptionswrapper">
-              <span className="text15">
-                <span>{currentScene?.question}</span>
-              </span>
               <div className="answeroptions">
-                {currentScene?.options?.map((option, index) => {
+                {quizQuestions[0]?.options.map((option, index) => {
                   return (
                     <div
                       className="scene-option"
                       key={`answer-options-${index}`}
-                      onClick={() => handleOutcome(option?.outcome)}
                     >
                       <span className="scene-option-text">
-                        <span>{option?.text}</span>
+                        <span>{option?.optionText}</span>
                       </span>
                     </div>
                   );

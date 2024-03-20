@@ -1,4 +1,21 @@
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Level = ({ levelName, completionStatus, enableLevel }) => {
+  const navigate = useNavigate();
+  const play = () => {
+    console.log("Clicked on play...");
+    navigate("/play");
+  };
+
+  useEffect(() => {
+    var divElement = document.getElementById("start-btn");
+
+    divElement.addEventListener("click", function () {
+      play();
+    });
+  });
+
   return (
     <>
       <div className="level">
@@ -18,7 +35,7 @@ const Level = ({ levelName, completionStatus, enableLevel }) => {
           </div>
         </div>
         {/* TODO: if enableLevel is false, disable the start button, hide it and display a lock symbol */}
-        <div className="start-btn-wrapper">
+        <div className="start-btn-wrapper" type="button" id="start-btn">
           <span className="start-btn">
             <span>Start</span>
           </span>
