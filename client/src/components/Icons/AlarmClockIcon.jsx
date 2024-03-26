@@ -16,25 +16,25 @@ export default function AlarmClockIcon() {
           cy="22.1667"
           r="11.6667"
           stroke="#D70A60"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           d="M8.33333 8.8335L5 12.1668"
           stroke="#D70A60"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M31.6667 8.8335L35 12.1668"
           stroke="#D70A60"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M15 18.8333L19.8093 22.0395C19.9172 22.1115 20.0622 22.0889 20.1432 21.9877L23.3333 18"
           stroke="#D70A60"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
       </svg>
     </SvgIcon>

@@ -1,0 +1,105 @@
+{
+  "topic": "Phishing",
+  "level": 1,
+  "scenes": [
+    {
+      "sceneId": 0,
+      "sceneType": "main",
+      "sceneDescription": "You receive an email that appears to be from your company's IT department. The email states that due to a security breach, all employees need to reset their passwords immediately by clicking on a link provided in the email. The link takes you to a website that looks identical to your company's official login page.",
+      "imageUrl": "",
+      "question": "What would you do?",
+      "options": [
+        {
+          "text": "Click on the link and proceed to reset your password.",
+          "outcome": 2
+        },
+        {
+          "text": "Ignore the email and report it to the IT department immediately.",
+          "outcome": 1
+        },
+        {
+          "text": "Forward the email to your colleagues to see if they received a similar email.",
+          "outcome": 3
+        },
+        {
+          "text": "Check with the IT department through official channels before taking any action.",
+          "outcome": 4
+        }
+      ]
+    },
+    {
+      "sceneId": 1,
+      "sceneType": "outcome",
+      "sceneDescription": "You chose to ignore the email and report it to the IT department immediately. The IT department confirms that the email is indeed a phishing attempt and advises all employees to delete it immediately. Well done! You've avoided falling victim to a potential cyber attack.",
+      "imageUrl": "",
+      "options": [],
+      "yay": true
+    },
+    {
+      "sceneId": 2,
+      "sceneType": "outcome",
+      "sceneDescription": "You clicked on the link and proceeded to reset your password. However, the link was malicious, and it led to a fake login page designed to steal your credentials. You've fallen victim to a phishing attack. Your actions have compromised your account and potentially exposed sensitive company data.",
+      "imageUrl": "",
+      "options": [],
+      "yay": false
+    },
+    {
+      "sceneId": 3,
+      "sceneType": "outcome",
+      "sceneDescription": "You chose to forward the email to your colleagues to see if they received a similar email. One of your colleagues replies, confirming that they also received the email. However, another colleague warns that it looks suspicious and advises reporting it to the IT department. You follow their advice and report the email. The IT department confirms that it's a phishing attempt and advises all employees to delete it immediately. Your quick action helped prevent a potential security breach.",
+      "imageUrl": "",
+      "options": [],
+      "yay": true
+    },
+    {
+      "sceneId": 4,
+      "sceneType": "outcome",
+      "sceneDescription": "You decided to verify the legitimacy of the email before taking any action. You contacted the IT department through their official support channels, and they confirmed that the email was a phishing attempt. They advised you to delete the email and warned against clicking on any links or providing any information. Your cautious approach prevented you from falling victim to the phishing scam.",
+      "imageUrl": "",
+      "options": [],
+      "yay": true
+    }
+  ],
+  "summary": "When receiving suspicious emails, do not click on any links or provide personal information. Always verify the legitimacy of the email through official channels, such as contacting the IT department directly. Be cautious and vigilant, as phishing attempts can closely mimic official emails. If you suspect a phishing attempt, report it to the appropriate authorities immediately.",
+  "flashCards": [
+    {
+      "data": "Phishing emails often create a sense of urgency to trick users into acting quickly without thinking."
+    },
+    {
+      "data": "Always verify suspicious emails through official channels before taking any action."
+    },
+    {
+      "data": "Clicking on links in phishing emails can lead to fake login pages designed to steal your credentials."
+    },
+    {
+      "data": "Forwarding suspicious emails to colleagues can help raise awareness, but always report them to IT first."
+    },
+    {
+      "data": "Never provide personal or sensitive information in response to an unsolicited email."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What should you do if you receive an email asking you to reset your password due to a security breach?",
+      "options": [
+        {
+          "optionText": "Click on the link and reset your password immediately.",
+          "key": 1
+        },
+        {
+          "optionText": "Ignore the email and report it to the IT department.",
+          "key": 2
+        },
+        {
+          "optionText": "Forward the email to your colleagues for their opinion.",
+          "key": 3
+        },
+        {
+          "optionText": "Verify the email's legitimacy with the IT department before acting.",
+          "key": 4
+        }
+      ],
+      "correctAnswerKey": 4
+    }
+  ]
+}

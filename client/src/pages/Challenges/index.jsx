@@ -36,7 +36,7 @@ const Challenges = (props) => {
       levels: [
         {
           levelName: "Level 1: Basic",
-          completionStatus: "Completed",
+          completionStatus: "Not Attempted",
           enableLevel: true,
         },
         {

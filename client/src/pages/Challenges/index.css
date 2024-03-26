@@ -193,6 +193,7 @@
   border-radius: 50px;
   justify-content: center;
   background-color: rgba(217, 217, 217, 1);
+  cursor: pointer;
 }
 .start-btn {
   color: rgba(0, 0, 0, 1);
