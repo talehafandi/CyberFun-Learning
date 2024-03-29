@@ -63,6 +63,7 @@ const User = new Schema({
     }],
     totalScore: { type: Number, required: true, default: 0 },
     rank: { type: Number, default: 0 },
+    nextUser: { type: Schema.Types.ObjectId, ref: 'user' },
     // contact details
     email: {
         type: String,
@@ -79,6 +80,8 @@ const User = new Schema({
     oAuth: { type: Boolean, default: false, select: false }
 })
 
-// ! Add middleware to diselect password field in find querry
+// Add middleware to diselect password field in find querry
+
+// pre.find()
 
 export default mongoose.model('user', User);
