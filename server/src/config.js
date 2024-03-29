@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import path from 'path'
 
 const config = {
