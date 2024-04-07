@@ -13,7 +13,7 @@ const Genders = {
     NONE: 'none'
 }
 
-const ChallengeStatus = {
+export const ChallengeStatus = {
     COMPLETE: 'complete',
     INCOMPLETE: 'incomplete'
 }
@@ -54,16 +54,26 @@ const User = new Schema({
         url: String,
         public_id: { type: String, select: false }
     },
+    badges: [{
+        url: String,
+        name: String,
+        acquiredAt: Date
+    }],
     challenges: [{
-        courseId: { type: Schema.Types.ObjectId },
+        challengeId: { type: Schema.Types.ObjectId },
         score: { type: Number, default: 0 },
         startedAt: { type: Date, required: true },
-        endedAt: { type: Date, required: true },
+        endedAt: { type: Date, required: true, default: null },
         status: { type: String, enum: ChallengeStatus, required: true, default: ChallengeStatus.INCOMPLETE }
     }],
+    // ranking, leaderboard
     totalScore: { type: Number, required: true, default: 0 },
     rank: { type: Number, default: 0 },
     nextUser: { type: Schema.Types.ObjectId, ref: 'user' },
+    // streak
+    lastChallengeSubmittedAt: { type: Date, default: Date.now() },
+    currentStreak: { type: Number, default: 0 },
+    longestStreak: { type: Number, default: 0 },
     // contact details
     email: {
         type: String,
