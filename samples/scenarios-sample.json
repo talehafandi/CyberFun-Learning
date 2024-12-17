@@ -1,413 +1,404 @@
-{
-  "scenarios": [
-    {
-      "id": 1,
-      "name": "Phishing Test",
-      "description": "Emily gets an email that looks like to be from her bank asking her to check her account as soon as possible. She's unsure whether to click the link.",
-      "options": [
-        {
-          "id": "A",
-          "description": "Click the link to verify her account."
-        },
-        {
-          "id": "B",
-          "description": "Contact her bank directly to confirm the legitimacy of the email."
-        }
-      ],
-      "outcome": {
-        "A": "A1",
-        "B": "B1"
+[
+  {
+    "name": "Phishing Test",
+    "description": "Emily gets an email that looks like to be from her bank asking her to check her account as soon as possible. She's unsure whether to click the link.",
+    "options": [
+      {
+        "id": "A",
+        "description": "Click the link to verify her account."
       },
-      "scenes": {
-        "A1": {
-          "description": "She clicks the link and enters her account details.",
-          "outcome": {
-            "A1a": "A1a",
-            "A1b": "A1b"
-          }
-        },
-        "A1a": {
-          "description": "Her account details are stolen, leading to unauthorized access.",
-          "outcome": {
-            "A1a1": "A1a1",
-            "A1a2": "A1a2"
-          }
-        },
-        "A1a1": {
-          "description": "Unauthorized transactions occur on her account, causing financial loss."
-        },
-        "A1a2": {
-          "description": "Malicious software is installed on her device, compromising further personal information."
-        },
-        "A1b": {
-          "description": "She realizes it's a phishing attempt and reports it to her bank.",
-          "outcome": {
-            "A1b1": "A1b1"
-          }
-        },
-        "A1b1": {
-          "description": "Her bank takes immediate action to secure her account and alerts other customers about the phishing scam."
-        },
-        "B1": {
-          "description": "Her bank confirms it's a phishing attempt and advises her to delete the email.",
-          "outcome": {
-            "B1a": "B1a",
-            "B1b": "B1b"
-          }
-        },
-        "B1a": {
-          "description": "Emily reports the phishing attempt to the relevant authorities for further investigation."
-        },
-        "B1b": {
-          "description": "Her bank provides guidance on how to spot phishing emails in the future to prevent similar incidents."
-        }
+      {
+        "id": "B",
+        "description": "Contact her bank directly to confirm the legitimacy of the email."
       }
+    ],
+    "outcome": {
+      "A": "A1",
+      "B": "B1"
     },
-    {
-      "id": 2,
-      "name": "Amazon Login",
-      "description": "You received an email from Amazon about a recent security issue. They asked you to verify your identity and update your password.",
-      "options": [
-        {
-          "id": "A",
-          "description": "Open the link without checking the email sender."
-        },
-        {
-          "id": "B",
-          "description": "Open the link after making sure it was sent by Amazon."
-        }
-      ],
-      "outcome": {
-        "A": "0A",
-        "B": "0B"
-      },
-      "scenes": {
-        "0A": {
-          "description": "Now that we are on the Amazon login page, we have to enter our credentials to verify our identity.",
-          "options": [
-            {
-              "id": "A",
-              "description": "Enter account credentials without checking the domain or UI."
-            },
-            {
-              "id": "B",
-              "description": "Enter account credentials after checking the domain and UI to make sure the web page is original."
-            }
-          ],
-          "outcome": {
-            "A": "0AA",
-            "B": "0AB"
-          }
-        },
-        "0AA": {
-          "description": "Your account is now hacked. See what you have missed."
-        },
-        "0AB": {
-          "description": "Do you think there is an unusuality in the domain? Do you think there is an unusuality in the UI? If not: Step 0AA. If yes, Well Done! It was indeed a phishing attempt. But you missed this one: <show sender username in the email."
-        },
-        "0B": {
-          "description": "Do you think abnormality in the email context? Do you recognise abnormality in the email sender? If yes: Well, Done! It was indeed a phishing attempt. If no: Step 0A."
-        }
-      }
-    },
-    {
-      "id": 3,
-      "name": "Password Security",
-      "description": "You have just read an article about password security, and it has prompted you to review your own password practices. As you consider updating your passwords, you're presented with the following options:",
-      "currentPassword": "summer21",
-      "options": [
-        {
-          "id": "A",
-          "description": "Change the password to 'summer2024!' because it's easy to remember."
-        },
-        {
-          "id": "B",
-          "description": "Change the password to '3cAts*2dOgz!' after using a password generator."
-        }
-      ],
-      "outcome": {
-        "A": "1A",
-        "B": "1B"
-      },
-      "scenes": {
-        "1A": {
-          "description": "You decide to change your password to 'summer2024!' because it contains a year and an exclamation mark, making it seem strong enough. After updating your password:",
-          "options": [
-            {
-              "id": "A",
-              "description": "You use the same password for all your accounts for consistency."
-            },
-            {
-              "id": "B",
-              "description": "You create unique passwords for each of your accounts."
-            }
-          ],
-          "outcome": {
-            "A": "1AA",
-            "B": "1AB"
-          }
-        },
-        "1AA": {
-          "description": "A few weeks later, several of your accounts have been compromised. Why do you think this happened?"
-        },
-        "1AB": {
-          "description": "Do you think using a unique password for each account is enough? What other strategies could you employ to enhance security?"
-        },
-        "1B": {
-          "description": "You're now using a complex password generated by a tool. How do you ensure you remember it?",
-          "options": [
-            {
-              "id": "A",
-              "description": "Write it down on a piece of paper and keep it in your wallet."
-            },
-            {
-              "id": "B",
-              "description": "Use a reputable password manager to store it securely."
-            }
-          ],
-          "outcome": {
-            "A": "1BA",
-            "B": "1BB"
-          }
-        },
-        "1BA": {
-          "description": "If the piece of paper with your password is lost or stolen, what risks does this pose?"
-        },
-        "1BB": {
-          "description": "When using a password manager, what are the best practices you should follow?"
+    "scenes": {
+      "A1": {
+        "description": "She clicks the link and enters her account details.",
+        "outcome": {
+          "A1a": "A1a",
+          "A1b": "A1b"
         }
       },
-      "twoFactorAuthenticationOptions": [
-        {
-          "id": "A",
-          "description": "Yes, immediately enable 2FA for an added layer of security."
-        },
-        {
-          "id": "B",
-          "description": "No, because you believe your new password is strong enough."
-        }
-      ],
-      "twoFactorAuthenticationOutcomes": {
-        "A": "2A",
-        "B": "2B"
-      },
-      "twoFactorAuthenticationScenes": {
-        "2A": {
-          "description": "After enabling 2FA, what additional steps can you take to protect your accounts?"
-        },
-        "2B": {
-          "description": "If you opt not to use 2FA, what could be the potential consequences, especially if your password alone is compromised?"
+      "A1a": {
+        "description": "Her account details are stolen, leading to unauthorized access.",
+        "outcome": {
+          "A1a1": "A1a1",
+          "A1a2": "A1a2"
         }
       },
-      "summary": "Password Length matters much more than complexity. Move to unique 14+ character passphrases today!"
-    },
-    {
-      "id": 4,
-      "name": "Multi-Factor Authentication Setup",
-      "description": "You're about to secure your personal account in the SafeKeep app. They recommend adding a second layer of security besides your password.",
-      "options": [
-        {
-          "id": "A",
-          "description": "Decide to stick with just the password because it's simple and you've always done it that way."
-        },
-        {
-          "id": "B",
-          "description": "Choose to add another security step, like a fingerprint scan or a special code from your phone."
-        }
-      ],
-      "outcome": {
-        "A": "0A",
-        "B": "0B"
+      "A1a1": {
+        "description": "Unauthorized transactions occur on her account, causing financial loss."
       },
-      "scenes": {
-        "0A": {
-          "description": "You're confident in your password alone and continue with your day.",
-          "options": [
-            {
-              "id": "A",
-              "description": "Later, you receive a warning that someone may have guessed your password."
-            },
-            {
-              "id": "B",
-              "description": "Nothing happens, and you feel your decision was justified."
-            }
-          ],
-          "outcome": {
-            "A": "0AA",
-            "B": "0AB"
-          }
-        },
-        "0AA": {
-          "description": "Now there's a risk that someone else can get into your account. What could you have done to prevent this?"
-        },
-        "0AB": {
-          "description": "Seeing no immediate issues, do you reconsider adding extra security, or do you maintain your current approach?"
-        },
-        "0B": {
-          "description": "You're looking into extra security options provided by SafeKeep.",
-          "options": [
-            {
-              "id": "A",
-              "description": "You set up a fingerprint scan because it's quick and personal."
-            },
-            {
-              "id": "B",
-              "description": "You download the SafeKeep code generator for a new code each time you log in."
-            }
-          ],
-          "outcome": {
-            "A": "0BA",
-            "B": "0BB"
-          }
-        },
-        "0BA": {
-          "description": "Your fingerprint is now a key to your account. Do you feel safer?"
-        },
-        "0BB": {
-          "description": "Every login now needs a new code from your phone. Do you think it's a hassle or a wise move?"
-        }
-      }
-    },
-    {
-      "id": 5,
-      "name": "Multi-Factor Authentication at Work",
-      "description": "Sarah notices her work account now requires an extra verification step through her smartphone. She's debating whether to enable this feature.",
-      "options": [
-        {
-          "id": "A",
-          "description": "Choose to bypass the extra verification process for the purpose of convenience."
-        },
-        {
-          "id": "B",
-          "description": "Enable Multi-Factor Authentication (MFA) for added security."
-        }
-      ],
-      "outcome": {
-        "A": "A1",
-        "B": "B1"
+      "A1a2": {
+        "description": "Malicious software is installed on her device, compromising further personal information."
       },
-      "scenes": {
-        "A1": {
-          "description": "Her account remains vulnerable to unauthorized access.",
-          "outcome": {
-            "A1a": "A1a",
-            "A1b": "A1b"
-          }
-        },
-        "A1a": {
-          "description": "Sarah's account gets compromised, leading to data breaches within the company."
-        },
-        "A1b": {
-          "description": "Unauthorized access to Sarah's account results in confidential information leaks."
-        },
-        "B1": {
-          "description": "She enables MFA and completes the setup process smoothly.",
-          "outcome": {
-            "B1a": "B1a",
-            "B1b": "B1b"
-          }
-        },
-        "B1a": {
-          "description": "Sarah finds the extra security reassuring and experiences no issues accessing her account."
-        },
-        "B1b": {
-          "description": "Sarah experiences a little delay during the setup process but successfully addresses it with the assistance of IT support."
+      "A1b": {
+        "description": "She realizes it's a phishing attempt and reports it to her bank.",
+        "outcome": {
+          "A1b1": "A1b1"
         }
-      }
-    },
-    {
-      "id": 6,
-      "name": "Data Protection Measures (handling sensitive information)",
-      "description": "Alex, an employee handling sensitive client information, is deciding how to secure the data properly.",
-      "options": [
-        {
-          "id": "A",
-          "description": "Share files electronically without encryption."
-        },
-        {
-          "id": "B",
-          "description": "Encrypt files before sharing them electronically to protect sensitive data."
-        }
-      ],
-      "outcome": {
-        "A": "A1",
-        "B": "B1"
       },
-      "scenes": {
-        "A1": {
-          "description": "Sensitive data gets compromised during transmission.",
-          "outcome": {
-            "A1a": "A1a",
-            "A1b": "A1b"
-          }
-        },
-        "A1a": {
-          "description": "Unauthorized parties intercept the data, leading to breaches and compliance violations."
-        },
-        "A1b": {
-          "description": "Sensitive information leaks result in reputational damage and legal consequences for the company."
-        },
-        "B1": {
-          "description": "He encrypts files and securely shares them with authorized recipients.",
-          "outcome": {
-            "B1a": "B1a",
-            "B1b": "B1b"
-          }
-        },
-        "B1a": {
-          "description": "Data remains protected during transmission, ensuring compliance with regulations."
-        },
-        "B1b": {
-          "description": "Encrypted files prevent unauthorized access, safeguarding client confidentiality and trust in the company."
-        }
-      }
-    },
-    {
-      "id": 7,
-      "name": "Social Engineering Awareness",
-      "description": "During a cybersecurity workshop, Emily discusses social engineering attacks with her colleagues.",
-      "options": [
-        {
-          "id": "A",
-          "description": "Explain social engineering attacks briefly without providing mitigation strategies."
-        },
-        {
-          "id": "B",
-          "description": "Explain social engineering attacks and emphasize verifying requests for information to enhance awareness and defenses."
-        }
-      ],
-      "outcome": {
-        "A": "A1",
-        "B": "B1"
+      "A1b1": {
+        "description": "Her bank takes immediate action to secure her account and alerts other customers about the phishing scam."
       },
-      "scenes": {
-        "A1": {
-          "description": "Colleagues remain unaware of how to protect themselves against social engineering attacks.",
-          "outcome": {
-            "A1a": "A1a",
-            "A1b": "A1b"
-          }
-        },
-        "A1a": {
-          "description": "Lack of awareness leads to colleagues falling victim to social engineering tactics."
-        },
-        "A1b": {
-          "description": "Failure to recognize social engineering cues results in compromised data and security breaches."
-        },
-        "B1": {
-          "description": "Colleagues understand the tactics used in social engineering attacks and learn effective mitigation strategies.",
-          "outcome": {
-            "B1a": "B1a",
-            "B1b": "B1b"
-          }
-        },
-        "B1a": {
-          "description": "More knowledge gives coworkers the power to recognise and report suspicious actions."
-        },
-        "B1b": {
-          "description": "Implementation of verification protocols minimizes the risk of falling victim to social engineering scams."
+      "B1": {
+        "description": "Her bank confirms it's a phishing attempt and advises her to delete the email.",
+        "outcome": {
+          "B1a": "B1a",
+          "B1b": "B1b"
         }
+      },
+      "B1a": {
+        "description": "Emily reports the phishing attempt to the relevant authorities for further investigation."
+      },
+      "B1b": {
+        "description": "Her bank provides guidance on how to spot phishing emails in the future to prevent similar incidents."
       }
     }
-  ]
-}
+  },
+  {
+    "name": "Amazon Login",
+    "description": "You received an email from Amazon about a recent security issue. They asked you to verify your identity and update your password.",
+    "options": [
+      {
+        "id": "A",
+        "description": "Open the link without checking the email sender."
+      },
+      {
+        "id": "B",
+        "description": "Open the link after making sure it was sent by Amazon."
+      }
+    ],
+    "outcome": {
+      "A": "0A",
+      "B": "0B"
+    },
+    "scenes": {
+      "0A": {
+        "description": "Now that we are on the Amazon login page, we have to enter our credentials to verify our identity.",
+        "options": [
+          {
+            "id": "A",
+            "description": "Enter account credentials without checking the domain or UI."
+          },
+          {
+            "id": "B",
+            "description": "Enter account credentials after checking the domain and UI to make sure the web page is original."
+          }
+        ],
+        "outcome": {
+          "A": "0AA",
+          "B": "0AB"
+        }
+      },
+      "0AA": {
+        "description": "Your account is now hacked. See what you have missed."
+      },
+      "0AB": {
+        "description": "Do you think there is an unusuality in the domain? Do you think there is an unusuality in the UI? If not: Step 0AA. If yes, Well Done! It was indeed a phishing attempt. But you missed this one: <show sender username in the email."
+      },
+      "0B": {
+        "description": "Do you think abnormality in the email context? Do you recognise abnormality in the email sender? If yes: Well, Done! It was indeed a phishing attempt. If no: Step 0A."
+      }
+    }
+  },
+  {
+    "name": "Password Security",
+    "description": "You have just read an article about password security, and it has prompted you to review your own password practices. As you consider updating your passwords, you're presented with the following options:",
+    "currentPassword": "summer21",
+    "options": [
+      {
+        "id": "A",
+        "description": "Change the password to 'summer2024!' because it's easy to remember."
+      },
+      {
+        "id": "B",
+        "description": "Change the password to '3cAts*2dOgz!' after using a password generator."
+      }
+    ],
+    "outcome": {
+      "A": "1A",
+      "B": "1B"
+    },
+    "scenes": {
+      "1A": {
+        "description": "You decide to change your password to 'summer2024!' because it contains a year and an exclamation mark, making it seem strong enough. After updating your password:",
+        "options": [
+          {
+            "id": "A",
+            "description": "You use the same password for all your accounts for consistency."
+          },
+          {
+            "id": "B",
+            "description": "You create unique passwords for each of your accounts."
+          }
+        ],
+        "outcome": {
+          "A": "1AA",
+          "B": "1AB"
+        }
+      },
+      "1AA": {
+        "description": "A few weeks later, several of your accounts have been compromised. Why do you think this happened?"
+      },
+      "1AB": {
+        "description": "Do you think using a unique password for each account is enough? What other strategies could you employ to enhance security?"
+      },
+      "1B": {
+        "description": "You're now using a complex password generated by a tool. How do you ensure you remember it?",
+        "options": [
+          {
+            "id": "A",
+            "description": "Write it down on a piece of paper and keep it in your wallet."
+          },
+          {
+            "id": "B",
+            "description": "Use a reputable password manager to store it securely."
+          }
+        ],
+        "outcome": {
+          "A": "1BA",
+          "B": "1BB"
+        }
+      },
+      "1BA": {
+        "description": "If the piece of paper with your password is lost or stolen, what risks does this pose?"
+      },
+      "1BB": {
+        "description": "When using a password manager, what are the best practices you should follow?"
+      }
+    },
+    "twoFactorAuthenticationOptions": [
+      {
+        "id": "A",
+        "description": "Yes, immediately enable 2FA for an added layer of security."
+      },
+      {
+        "id": "B",
+        "description": "No, because you believe your new password is strong enough."
+      }
+    ],
+    "twoFactorAuthenticationOutcomes": {
+      "A": "2A",
+      "B": "2B"
+    },
+    "twoFactorAuthenticationScenes": {
+      "2A": {
+        "description": "After enabling 2FA, what additional steps can you take to protect your accounts?"
+      },
+      "2B": {
+        "description": "If you opt not to use 2FA, what could be the potential consequences, especially if your password alone is compromised?"
+      }
+    },
+    "summary": "Password Length matters much more than complexity. Move to unique 14+ character passphrases today!"
+  },
+  {
+    "name": "Multi-Factor Authentication Setup",
+    "description": "You're about to secure your personal account in the SafeKeep app. They recommend adding a second layer of security besides your password.",
+    "options": [
+      {
+        "id": "A",
+        "description": "Decide to stick with just the password because it's simple and you've always done it that way."
+      },
+      {
+        "id": "B",
+        "description": "Choose to add another security step, like a fingerprint scan or a special code from your phone."
+      }
+    ],
+    "outcome": {
+      "A": "0A",
+      "B": "0B"
+    },
+    "scenes": {
+      "0A": {
+        "description": "You're confident in your password alone and continue with your day.",
+        "options": [
+          {
+            "id": "A",
+            "description": "Later, you receive a warning that someone may have guessed your password."
+          },
+          {
+            "id": "B",
+            "description": "Nothing happens, and you feel your decision was justified."
+          }
+        ],
+        "outcome": {
+          "A": "0AA",
+          "B": "0AB"
+        }
+      },
+      "0AA": {
+        "description": "Now there's a risk that someone else can get into your account. What could you have done to prevent this?"
+      },
+      "0AB": {
+        "description": "Seeing no immediate issues, do you reconsider adding extra security, or do you maintain your current approach?"
+      },
+      "0B": {
+        "description": "You're looking into extra security options provided by SafeKeep.",
+        "options": [
+          {
+            "id": "A",
+            "description": "You set up a fingerprint scan because it's quick and personal."
+          },
+          {
+            "id": "B",
+            "description": "You download the SafeKeep code generator for a new code each time you log in."
+          }
+        ],
+        "outcome": {
+          "A": "0BA",
+          "B": "0BB"
+        }
+      },
+      "0BA": {
+        "description": "Your fingerprint is now a key to your account. Do you feel safer?"
+      },
+      "0BB": {
+        "description": "Every login now needs a new code from your phone. Do you think it's a hassle or a wise move?"
+      }
+    }
+  },
+  {
+    "name": "Multi-Factor Authentication at Work",
+    "description": "Sarah notices her work account now requires an extra verification step through her smartphone. She's debating whether to enable this feature.",
+    "options": [
+      {
+        "id": "A",
+        "description": "Choose to bypass the extra verification process for the purpose of convenience."
+      },
+      {
+        "id": "B",
+        "description": "Enable Multi-Factor Authentication (MFA) for added security."
+      }
+    ],
+    "outcome": {
+      "A": "A1",
+      "B": "B1"
+    },
+    "scenes": {
+      "A1": {
+        "description": "Her account remains vulnerable to unauthorized access.",
+        "outcome": {
+          "A1a": "A1a",
+          "A1b": "A1b"
+        }
+      },
+      "A1a": {
+        "description": "Sarah's account gets compromised, leading to data breaches within the company."
+      },
+      "A1b": {
+        "description": "Unauthorized access to Sarah's account results in confidential information leaks."
+      },
+      "B1": {
+        "description": "She enables MFA and completes the setup process smoothly.",
+        "outcome": {
+          "B1a": "B1a",
+          "B1b": "B1b"
+        }
+      },
+      "B1a": {
+        "description": "Sarah finds the extra security reassuring and experiences no issues accessing her account."
+      },
+      "B1b": {
+        "description": "Sarah experiences a little delay during the setup process but successfully addresses it with the assistance of IT support."
+      }
+    }
+  },
+  {
+    "name": "Data Protection Measures (handling sensitive information)",
+    "description": "Alex, an employee handling sensitive client information, is deciding how to secure the data properly.",
+    "options": [
+      {
+        "id": "A",
+        "description": "Share files electronically without encryption."
+      },
+      {
+        "id": "B",
+        "description": "Encrypt files before sharing them electronically to protect sensitive data."
+      }
+    ],
+    "outcome": {
+      "A": "A1",
+      "B": "B1"
+    },
+    "scenes": {
+      "A1": {
+        "description": "Sensitive data gets compromised during transmission.",
+        "outcome": {
+          "A1a": "A1a",
+          "A1b": "A1b"
+        }
+      },
+      "A1a": {
+        "description": "Unauthorized parties intercept the data, leading to breaches and compliance violations."
+      },
+      "A1b": {
+        "description": "Sensitive information leaks result in reputational damage and legal consequences for the company."
+      },
+      "B1": {
+        "description": "He encrypts files and securely shares them with authorized recipients.",
+        "outcome": {
+          "B1a": "B1a",
+          "B1b": "B1b"
+        }
+      },
+      "B1a": {
+        "description": "Data remains protected during transmission, ensuring compliance with regulations."
+      },
+      "B1b": {
+        "description": "Encrypted files prevent unauthorized access, safeguarding client confidentiality and trust in the company."
+      }
+    }
+  },
+  {
+    "name": "Social Engineering Awareness",
+    "description": "During a cybersecurity workshop, Emily discusses social engineering attacks with her colleagues.",
+    "options": [
+      {
+        "id": "A",
+        "description": "Explain social engineering attacks briefly without providing mitigation strategies."
+      },
+      {
+        "id": "B",
+        "description": "Explain social engineering attacks and emphasize verifying requests for information to enhance awareness and defenses."
+      }
+    ],
+    "outcome": {
+      "A": "A1",
+      "B": "B1"
+    },
+    "scenes": {
+      "A1": {
+        "description": "Colleagues remain unaware of how to protect themselves against social engineering attacks.",
+        "outcome": {
+          "A1a": "A1a",
+          "A1b": "A1b"
+        }
+      },
+      "A1a": {
+        "description": "Lack of awareness leads to colleagues falling victim to social engineering tactics."
+      },
+      "A1b": {
+        "description": "Failure to recognize social engineering cues results in compromised data and security breaches."
+      },
+      "B1": {
+        "description": "Colleagues understand the tactics used in social engineering attacks and learn effective mitigation strategies.",
+        "outcome": {
+          "B1a": "B1a",
+          "B1b": "B1b"
+        }
+      },
+      "B1a": {
+        "description": "More knowledge gives coworkers the power to recognise and report suspicious actions."
+      },
+      "B1b": {
+        "description": "Implementation of verification protocols minimizes the risk of falling victim to social engineering scams."
+      }
+    }
+  }
+]
