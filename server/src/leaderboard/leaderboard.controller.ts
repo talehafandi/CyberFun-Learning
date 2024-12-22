@@ -7,7 +7,7 @@ export class LeaderboardController {
 
     @Get('refresh')
     async refresh() {
-        //? Never forget to add "()", or whole code of the method will be disclosed
+        //? WARN: Never forget to add "()", or whole code of the method will be disclosed
         return this.service.refresh();
     }
 

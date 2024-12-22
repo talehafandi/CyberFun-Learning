@@ -1,4 +1,4 @@
-import { StartChallengeDTO } from './DTOs/startChallenge.dto';
+import { StartChallengeDTO } from '../user/DTOs/startChallenge.dto';
 import { ValidationPipe } from '@nestjs/common/pipes';
 import { Controller, Get, Post, Delete, Patch, Query, Param, Body } from '@nestjs/common';
 // Service
@@ -6,7 +6,7 @@ import { ChallengeService } from './challenge.service';
 // DTOs
 import { GetChallengeDTO } from './DTOs/getChallenge.dto.';
 import { ListChallengeDTO } from './DTOs/listChallenge.dto';
-import { FinishChallengeDTO } from './DTOs/finishChallenge.dto';
+import { FinishChallengeDTO } from '../user/DTOs/finishChallenge.dto';
 
 
 
@@ -21,15 +21,15 @@ export class ChallengeController {
 
     @Get(':id')
     async getOne(@Param(ValidationPipe) dto: GetChallengeDTO){
-        return this.service.getOne(dto)
+        // return this.service.findById(dto.id)
     }
 
-    @Patch('/start/:id/:username')
+    @Get('/start/:id/:username')
     async startChallenge(@Param(ValidationPipe) dto: StartChallengeDTO){
         return this.service.startChallenge(dto);
     }
 
-    @Patch('/finish/:id/:username')
+    @Get('/finish/:id/:username')
     async finishChallenge(@Param(ValidationPipe) dto: FinishChallengeDTO){
         return this.service.finishChallenge(dto)
     }

@@ -4,16 +4,16 @@ import { User } from 'src/user/entities/user.entity';
 
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 
 // Entities
 import { ChallengeStatus } from 'src/user/entities/user.entity';
 
 // DTOs
 import { GetChallengeDTO } from './DTOs/getChallenge.dto.';
-import { StartChallengeDTO } from './DTOs/startChallenge.dto';
+import { StartChallengeDTO } from '../user/DTOs/startChallenge.dto';
 import { ListChallengeDTO } from './DTOs/listChallenge.dto';
-import { FinishChallengeDTO } from './DTOs/finishChallenge.dto';
+import { FinishChallengeDTO } from '../user/DTOs/finishChallenge.dto';
 
 
 @Injectable()
@@ -27,8 +27,8 @@ export class ChallengeService {
         return this.repo.find().limit(dto.limit);
     }
 
-    async getOne(dto: GetChallengeDTO): Promise<Challenge> {
-        const challenge = this.repo.findById(dto.id) as unknown as Challenge;
+    async findById(id: Types.ObjectId): Promise<Challenge> {
+        const challenge = this.repo.findById(id) as unknown as Challenge;
 
         if (!challenge) throw new ExceptionsHandler();
 

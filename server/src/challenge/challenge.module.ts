@@ -12,6 +12,7 @@ import { User, UserSchema } from 'src/user/entities/user.entity';
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }])
   ],
   controllers: [ChallengeController],
-  providers: [ChallengeService]
+  providers: [ChallengeService],
+  exports: [ChallengeService]
 })
 export class ChallengeModule { }
