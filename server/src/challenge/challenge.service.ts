@@ -1,8 +1,6 @@
-import { ExceptionsHandler } from '@nestjs/core/exceptions/exceptions-handler';
 import { Challenge } from './entities/challenge.entity';
-import { User } from 'src/user/entities/user.entity';
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException, Inject, forwardRef } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 
@@ -15,12 +13,16 @@ import { StartChallengeDTO } from '../user/DTOs/startChallenge.dto';
 import { ListChallengeDTO } from './DTOs/listChallenge.dto';
 import { FinishChallengeDTO } from '../user/DTOs/finishChallenge.dto';
 
+// SERVICES
+import { UserService } from 'src/user/user.service';
+
 
 @Injectable()
 export class ChallengeService {
     constructor(
         @InjectModel(Challenge.name) private readonly repo: Model<Challenge>,
-        @InjectModel(User.name) private readonly userRepo: Model<User>
+        @Inject(forwardRef(() => UserService))
+        private readonly userService: UserService
     ) { }
 
     async list(dto: ListChallengeDTO): Promise<any> {
@@ -30,7 +32,7 @@ export class ChallengeService {
     async findById(id: Types.ObjectId): Promise<Challenge> {
         const challenge = this.repo.findById(id) as unknown as Challenge;
 
-        if (!challenge) throw new ExceptionsHandler();
+        if (!challenge) throw new BadRequestException("something went wrong!");
 
         return challenge;
     }
@@ -39,7 +41,7 @@ export class ChallengeService {
         const { id, username } = dto;
 
         const challenge = this.repo.findById(id);
-        if (!challenge) throw new ExceptionsHandler();
+        if (!challenge) throw new BadRequestException("something went wrong!");
 
         const challengePayload = {
             challengeId: id,
@@ -49,11 +51,11 @@ export class ChallengeService {
             score: 0
         }
 
-        const user = this.userRepo.updateOne(
+        const user = this.userService.updateOne(
             { username },
             { $push: { challenges: challengePayload } }
         )
-        if (!user) throw new ExceptionsHandler();
+        if (!user) throw new BadRequestException("something went wrong!");
 
         return true;
     }
@@ -61,7 +63,7 @@ export class ChallengeService {
     async finishChallenge(dto: FinishChallengeDTO) {
         const { id, username, score } = dto;
 
-        const user = this.userRepo.findOneAndUpdate(
+        const user = this.userService.updateOne(
             // find
             {
                 username: username,
@@ -79,7 +81,7 @@ export class ChallengeService {
             }
 
         )
-        if (!user) throw new ExceptionsHandler();
+        if (!user) throw new BadRequestException("something went wrong!");
 
         return true;
     }

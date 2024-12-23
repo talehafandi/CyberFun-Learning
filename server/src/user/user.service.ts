@@ -1,7 +1,8 @@
+import { UserSchema } from 'src/user/entities/user.entity';
 import { ChallengeService } from './../challenge/challenge.service';
 import { Challenge, ChallengeStatus, User } from './entities/user.entity';
 import { InjectModel } from '@nestjs/mongoose';
-import { Injectable, Logger, BadRequestException } from '@nestjs/common';
+import { Injectable, BadRequestException, Inject, forwardRef } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 import { ExceptionsHandler } from '@nestjs/core/exceptions/exceptions-handler';
 
@@ -14,9 +15,9 @@ import { FinishChallengeDTO } from 'src/user/DTOs/finishChallenge.dto';
 
 @Injectable()
 export class UserService {
-    private readonly logger = new Logger(UserService.name);
     constructor(
         @InjectModel(User.name) private readonly repo: Model<User>,
+        @Inject(forwardRef(() => ChallengeService))
         private readonly challengeService: ChallengeService
     ) { }
 
@@ -47,16 +48,19 @@ export class UserService {
         }
     }
 
+    async updateOne(searchQuery: object, updateQuery: object): Promise<boolean> {
+        return !!this.repo.updateOne(searchQuery, updateQuery);
+    }
+
     // -----------CHALLANGES-----------
 
     // check if the user has already started/finished the challege
     async isChallengeActivatedByUser(username: string, challengeId: Types.ObjectId | string): Promise<boolean> {
-        const isActivated = !!this.repo.find(
-            { username },
-            { challenges: { $elemMatch: { challengeId } } }
+        const user: User = await this.repo.findOne(
+            { username, "challenges.challengeId": challengeId }
         );
-
-        return isActivated;
+        
+        return !!user;
     }
 
     async startChallenge(username: string, id: Types.ObjectId): Promise<boolean> {
@@ -91,7 +95,7 @@ export class UserService {
     async finishChallenge(dto: FinishChallengeDTO): Promise<boolean> {
         try {
             const { id, username, score } = dto;
-            
+
             const user = this.repo.findOneAndUpdate(
                 // find
                 {
@@ -119,7 +123,7 @@ export class UserService {
     }
 
     async getChallengesByUsername(username: string) {
-        const challenges: Challenge[] = await this.repo.findOne({ username }, {_id: 0, challenges: true});
+        const challenges: Challenge[] = await this.repo.findOne({ username }, { _id: 0, challenges: true });
         // console.log(challenges)
         return challenges;
     }
