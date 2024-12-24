@@ -1,20 +1,19 @@
 import { Types } from 'mongoose';
 import { UserService } from './user.service';
-import { Controller, Get, Body, Post, Delete, Put, Query, Param } from '@nestjs/common';
+import { Controller, Get, Body, Post, Delete, Put, Query, Param, UsePipes } from '@nestjs/common';
 
 // Pipes
 import { ParseObjectIdPipe } from './../common/pipes/ParseObjectId.pipe';
 import { ValidationPipe } from '@nestjs/common/pipes';
 
 // DTOs
-import { ListUsersDTO } from './DTOs/listUser.dto';
-import { GetUserDTO } from './DTOs/getUser.dto';
-import { StartChallengeDTO } from 'src/user/DTOs/startChallenge.dto';
 import { FinishChallengeDTO } from 'src/user/DTOs/finishChallenge.dto';
+import { filterQueryDTO } from './../common/DTOs/filterQuery.dto';
 
 // AUTH
-import { UseGuards } from '@nestjs/common/decorators';
-import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
+// import { UseGuards } from '@nestjs/common/decorators';
+// import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
+
 
 // @UseGuards(JwtAuthGuard)
 @Controller('users')
@@ -23,10 +22,11 @@ export class UserController {
 
     // list user
     @Get('')
+    @UsePipes(new ValidationPipe({ transform: true }))
     async list(
-        @Query('limit') limit: number = 10,
-        @Query('offset') offset: number = 0) {
-        return this.service.list({ limit, offset });
+        @Query() dto: filterQueryDTO
+    ) {
+        return this.service.list({ limit: dto.limit, offset: dto.offset });
     }
 
     @Get(':id')
@@ -50,11 +50,11 @@ export class UserController {
         return this.service.startChallenge(username, id);
     }
 
-    //todo make score and id query
     @Get('/:username/finish-challenge')
+    @UsePipes(new ValidationPipe({ transform: true }))
     async finishChallenge(
         @Param("username") username: string,
-        @Query(ValidationPipe) dto: FinishChallengeDTO
+        @Query() dto: FinishChallengeDTO
     ) {
         return this.service.finishChallenge({ username, ...dto });
     }

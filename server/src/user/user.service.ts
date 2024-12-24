@@ -38,9 +38,8 @@ export class UserService {
 
     async findById(id: Types.ObjectId): Promise<any> {
         try {
-            const user: User = await this.repo.findById(id);
-            // if (!user) return null;
-            // console.log("user: ", user)
+            const user: User = await this.repo.findById(id);            
+            if (!user) throw new BadRequestException("User not found");
 
             return user;
         } catch (error) {
@@ -55,7 +54,7 @@ export class UserService {
     // -----------CHALLANGES-----------
 
     // check if the user has already started/finished the challege
-    async isChallengeActivatedByUser(username: string, challengeId: Types.ObjectId | string): Promise<boolean> {
+    async isChallengeActivatedByUser(username: string, challengeId: Types.ObjectId): Promise<boolean> {
         const user: User = await this.repo.findOne(
             { username, "challenges.challengeId": challengeId }
         );

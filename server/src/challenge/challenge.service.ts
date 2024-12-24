@@ -9,21 +9,17 @@ import { Model, Types } from 'mongoose';
 
 // DTOs
 // import { GetChallengeDTO } from './DTOs/getChallenge.dto.';
-import { ListChallengeDTO } from './DTOs/listChallenge.dto';
+import { filterQueryDTO } from 'src/common/DTOs/filterQuery.dto';
 
-// SERVICES
-import { UserService } from 'src/user/user.service';
 
 
 @Injectable()
 export class ChallengeService {
     constructor(
-        @InjectModel(Challenge.name) private readonly repo: Model<Challenge>,
-        @Inject(forwardRef(() => UserService))
-        private readonly userService: UserService
+        @InjectModel(Challenge.name) private readonly repo: Model<Challenge>
     ) { }
 
-    async list(dto: ListChallengeDTO): Promise<any> {
+    async list(dto: filterQueryDTO): Promise<any> {
         return this.repo.find().limit(dto.limit);
     }
 

@@ -25,28 +25,28 @@ export class AuthService {
         const user: User = await this.repo.findOne({ email });
 
         // check if exists
-        // if (user && user.approved) return { message: "User already exists" }
-        // if (user) return { message: "code already sent" }
+        if (user && user.approved) return { message: "User already exists" }
+        if (user) return { message: "code already sent" }
 
-        // // check if password is valid
-        // if (!this.passwordRegEx.test(password)) return { message: "password is weak!" };
+        // check if password is valid
+        if (!this.passwordRegEx.test(password)) return { message: "password is weak!" };
 
-        // // hash password
-        // const salt = genSaltSync(10);
-        // const hashedPassword = hashSync(password, salt);
+        // hash password
+        const salt = genSaltSync(10);
+        const hashedPassword = hashSync(password, salt);
 
-        // const username = email.split('@')[0];
+        const username = email.split('@')[0];
 
-        // const userPayload = { ...dto, username, password: hashedPassword };
+        const userPayload = { ...dto, username, password: hashedPassword };
         // fix that later
         // @ts-ignore
-        // const newUser: User = await this.repo.create(userPayload);
-        // newUser.save();)
+        const newUser: User = await this.repo.create(userPayload);
+        newUser.save();
 
         // console.log(this.JwtService)
 
         const token = await this.JwtService.signAsync({id: user._id, firstName: user.firstName, lastName: user.lastName})
-        console.log(token)
+        // console.log(token)
 
         return { message: "User created", token };
     }

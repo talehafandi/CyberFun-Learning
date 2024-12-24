@@ -4,12 +4,10 @@ import { ChallengeController } from './challenge.controller';
 import { ChallengeService } from './challenge.service';
 
 import { Challenge, ChallengeSchema } from './entities/challenge.entity';
-import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Challenge.name, schema: ChallengeSchema }]),
-    forwardRef(() => UserModule)
+    MongooseModule.forFeature([{ name: Challenge.name, schema: ChallengeSchema }])
   ],
   controllers: [ChallengeController],
   providers: [ChallengeService],

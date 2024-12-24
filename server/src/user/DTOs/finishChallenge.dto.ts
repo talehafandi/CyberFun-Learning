@@ -1,8 +1,17 @@
-import { IsNumber, IsNumberString } from "class-validator";
+import { IsObjectId } from 'src/common/decorators/isObjectId.decorator';
+import { IsNotEmpty, IsNumber, IsNumberString, IsOptional, Max, Min } from "class-validator";
+import { Transform } from 'class-transformer';
+import { Types } from "mongoose";
+
 export class FinishChallengeDTO {
-    @IsNumberString()
-    id: string;
+    @IsObjectId()
+    id: string | Types.ObjectId;
+
     username: string;
-    @IsNumberString()
-    score: string;
+
+    @Transform(({ value }) => parseInt(value))
+    @IsNumber()
+    @Max(15000)
+    @Min(100)
+    score: number;
 }
