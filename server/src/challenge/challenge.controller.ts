@@ -6,7 +6,6 @@ import { ChallengeService } from './challenge.service';
 // DTOs
 import { GetChallengeDTO } from './DTOs/getChallenge.dto.';
 import { ListChallengeDTO } from './DTOs/listChallenge.dto';
-import { FinishChallengeDTO } from '../user/DTOs/finishChallenge.dto';
 
 
 
@@ -22,15 +21,5 @@ export class ChallengeController {
     @Get(':id')
     async getOne(@Param(ValidationPipe) dto: GetChallengeDTO){
         // return this.service.findById(dto.id)
-    }
-
-    @Get('/start/:id/:username')
-    async startChallenge(@Param(ValidationPipe) dto: StartChallengeDTO){
-        return this.service.startChallenge(dto);
-    }
-
-    @Get('/finish/:id/:username')
-    async finishChallenge(@Param(ValidationPipe) dto: FinishChallengeDTO){
-        return this.service.finishChallenge(dto)
     }
 }

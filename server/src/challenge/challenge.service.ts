@@ -5,13 +5,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 
 // Entities
-import { ChallengeStatus } from 'src/user/entities/user.entity';
+// import { ChallengeStatus } from 'src/user/entities/user.entity';
 
 // DTOs
-import { GetChallengeDTO } from './DTOs/getChallenge.dto.';
-import { StartChallengeDTO } from '../user/DTOs/startChallenge.dto';
+// import { GetChallengeDTO } from './DTOs/getChallenge.dto.';
 import { ListChallengeDTO } from './DTOs/listChallenge.dto';
-import { FinishChallengeDTO } from '../user/DTOs/finishChallenge.dto';
 
 // SERVICES
 import { UserService } from 'src/user/user.service';
