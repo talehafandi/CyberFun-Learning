@@ -7,10 +7,8 @@ import { Model, Types } from 'mongoose';
 import { ExceptionsHandler } from '@nestjs/core/exceptions/exceptions-handler';
 
 // DTOs
-import { ListUsersDTO } from './DTOs/listUser.dto';
-import { GetUserDTO } from './DTOs/getUser.dto';
-import { StartChallengeDTO } from 'src/user/DTOs/startChallenge.dto';
 import { FinishChallengeDTO } from 'src/user/DTOs/finishChallenge.dto';
+import { filterQueryDTO } from 'src/common/DTOs/filterQuery.dto';
 
 
 @Injectable()
@@ -21,7 +19,7 @@ export class UserService {
         private readonly challengeService: ChallengeService
     ) { }
 
-    async list(listUsersDTO: ListUsersDTO): Promise<User[]> {
+    async list(listUsersDTO: filterQueryDTO): Promise<User[]> {
         try {
             const { limit, offset } = listUsersDTO;
 
